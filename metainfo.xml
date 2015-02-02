@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<metainfo>
+    <schemaVersion>2.0</schemaVersion>
+    <services>
+        <service>
+            <name>KRB5</name>
+            <displayName>Kerberos KDC</displayName>
+            <comment>Kerberos Key Distribution Center is a network service that supplies session tickets and temporary session keys to users and computers within a domain</comment>
+            <version>1.0.0</version>
+            <components>
+                <component>
+                  <name>KRB5_MASTER</name>
+                  <displayName>Kerberos Key Distribution Center</displayName>
+                  <category>MASTER</category>
+                  <cardinality>1</cardinality>
+                  <commandScript>
+                    <script>scripts/master.py</script>
+                    <scriptType>PYTHON</scriptType>
+                    <timeout>5000</timeout>
+                  </commandScript>
+                </component>
+            </components>
+            <osSpecifics>
+              <osSpecific>
+                <osFamily>redhat6</osFamily>
+                <packages>
+                   <package><name>nscd</name></package>                                                
+                </packages>
+              </osSpecific>
+            </osSpecifics> 
+      	    <configuration-dependencies>
+        	<config-type>krb5-server</config-type>
+        	<config-type>krb5-libs</config-type>
+        	<config-type>krb5-auth-dialog</config-type>
+        	<config-type>krb5-workstation</config-type>
+      	    </configuration-dependencies>
+            <restartRequiredAfterChange>false</restartRequiredAfterChange>
+        </service>
+    </services>
+</metainfo>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+ 
+<configuration>
+
+  <property>
+    <name>kdc.realm</name>
+    <value>HORTONWORKS.COM</value>
+    <description>Realm name e.g. HORTONWORKS.COM</description>
+  </property> 
+  <property>
+    <name>kdc.domain</name>
+    <value>hortonworks.com</value>
+    <description>Domain name e.g. hortonworks.com</description>
+  </property>   
+ 
+   <property>
+    <name>kdc.host</name>
+    <value>sandbox.hortonworks.com</value>
+    <description>Host name where KDC resides e.g. sandbox.hortonworks.com</description>
+  </property> 
+   
+  <property>
+    <name>kdc.admin</name>
+    <value>admin/admin</value>
+    <description>Admin principal e.g admin/admin</description>
+  </property> 
+
+  <property require-input="true">
+    <name>kdc.adminpassword</name>
+    <value></value>
+    <description>Admin password</description>
+  </property>   
+  
+  <property require-input="true">
+    <name>kdb.password</name>
+    <value></value>
+    <description>KDB password</description>
+  </property>   
+
+  
+</configuration>
+
