@@ -35,8 +35,8 @@ class Master(Script):
 
     Execute('echo "*/admin@HORTONWORKS.COM *" > /var/kerberos/krb5kdc/kadm5.acl')
 
-    Execute('/etc/rc.d/init.d/krb5kdc restart')
-    Execute('/etc/rc.d/init.d/kadmin restart')
+    #Execute('/etc/rc.d/init.d/krb5kdc restart')
+    #Execute('/etc/rc.d/init.d/kadmin restart')
 
 
   def configure(self, env):

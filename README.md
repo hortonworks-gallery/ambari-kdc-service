@@ -48,7 +48,7 @@ On bottom left -> Actions -> Add service -> check KDC server -> Next -> Next -> 
     ```
 
 
-#### Browse users
+#### Run kadmin commands
 
 - You now have Kerberos KDC running on your Hadoop cluster
 
