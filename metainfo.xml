@@ -24,15 +24,15 @@
               <osSpecific>
                 <osFamily>redhat6</osFamily>
                 <packages>
-                   <package><name>nscd</name></package>                                                
+                   <package><name>krb5-server</name></package>   
+                   <package><name>krb5-libs</name></package>   
+                   <package><name>krb5-auth-dialog</name></package>   
+                   <package><name>krb5-workstation</name></package>           	                                             
                 </packages>
               </osSpecific>
             </osSpecifics> 
       	    <configuration-dependencies>
-        	<config-type>krb5-server</config-type>
-        	<config-type>krb5-libs</config-type>
-        	<config-type>krb5-auth-dialog</config-type>
-        	<config-type>krb5-workstation</config-type>
+				<config-type>krb5-config</config-type>
       	    </configuration-dependencies>
             <restartRequiredAfterChange>false</restartRequiredAfterChange>
         </service>
