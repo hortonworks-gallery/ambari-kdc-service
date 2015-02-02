@@ -17,7 +17,7 @@ ssh root@sandbox.hortonworks.com
 - To deploy the KDC stack, run below
 ```
 cd /var/lib/ambari-server/resources/stacks/HDP/2.2/services
-git clone https://github.com/abajwa-hw/krb5-stack.git   
+git clone https://github.com/abajwa-hw/kdc-stack.git    
 sudo service ambari restart
 ```
 - Then you can click on 'Add Service' from the 'Actions' dropdown menu in the bottom left of the Ambari dashboard:
