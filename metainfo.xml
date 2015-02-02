@@ -10,7 +10,7 @@
             <components>
                 <component>
                   <name>KRB5_MASTER</name>
-                  <displayName>Kerberos Key Distribution Center</displayName>
+                  <displayName>Kerberos KDC</displayName>
                   <category>MASTER</category>
                   <cardinality>1</cardinality>
                   <commandScript>
