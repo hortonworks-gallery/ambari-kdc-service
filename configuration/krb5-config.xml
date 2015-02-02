@@ -29,12 +29,14 @@
   <property require-input="true">
     <name>kdc.adminpassword</name>
     <value></value>
+    <property-type>PASSWORD</property-type>
     <description>Admin password</description>
   </property>   
   
   <property require-input="true">
     <name>kdb.password</name>
     <value></value>
+    <property-type>PASSWORD</property-type>
     <description>KDB password</description>
   </property>   
 
