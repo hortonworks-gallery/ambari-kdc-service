@@ -33,7 +33,7 @@ class Master(Script):
     Execute('kadmin.local -q "addprinc '+params.kdc_admin+'" < passwd.txt')
     Execute('rm passwd.txt')
 
-    Execute('echo "*/admin@HORTONWORKS.COM *" > /var/kerberos/krb5kdc/kadm5.acl')
+    Execute('echo "*/admin@'+params.kdc_realm+' *" > /var/kerberos/krb5kdc/kadm5.acl')
 
     #Execute('/etc/rc.d/init.d/krb5kdc restart')
     #Execute('/etc/rc.d/init.d/kadmin restart')
