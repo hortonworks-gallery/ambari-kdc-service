@@ -14,11 +14,12 @@
     <description>Domain name e.g. hortonworks.com</description>
   </property>   
  
+   <!-- autodetect this
    <property>
     <name>kdc.host</name>
     <value>sandbox.hortonworks.com</value>
     <description>Host name where KDC resides e.g. sandbox.hortonworks.com</description>
-  </property> 
+  </property> -->
    
   <property>
     <name>kdc.admin</name>

@@ -9,11 +9,14 @@ class Master(Script):
     self.configure(env)
     import params
 
-    Execute('sed -i "s/EXAMPLE.COM/'+params.kdc_realm+'/g" /var/lib/ambari-server/resources/scripts/krb5.conf')
-    Execute('sed -i "s/kerberos.example.com/'+params.kdc_host+'/g" /var/lib/ambari-server/resources/scripts/krb5.conf')
-    Execute('sed -i "s/example.com/'+params.kdc_domain+'/g" /var/lib/ambari-server/resources/scripts/krb5.conf')
+    #e.g. /var/lib/ambari-agent/cache/stacks/HDP/2.2/services/kdc-stack/package
+    service_packagedir = os.path.realpath(__file__).split('/scripts')[0] 
+    Execute('/bin/cp -f '+service_packagedir+'/templates/krb5.conf /etc')
 
-    Execute('/bin/cp -f /var/lib/ambari-server/resources/scripts/krb5.conf /etc')
+    Execute('sed -i "s/kerberos.example.com/'+params.kdc_host+'/g" /etc/krb5.conf')    
+    Execute('sed -i "s/EXAMPLE.COM/'+params.kdc_realm+'/g" /etc/krb5.conf')
+    Execute('sed -i "s/example.com/'+params.kdc_domain+'/g" /etc/krb5.conf')
+    
 
     Execute('echo "'+params.kdb_password+'" > passwd.txt')
     Execute('echo "'+params.kdb_password+'" >> passwd.txt')

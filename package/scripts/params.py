@@ -5,9 +5,12 @@ from resource_management import *
 # server configurations
 config = Script.get_config()
 
-kdc_host = config['configurations']['krb5-config']['kdc.host']
 kdc_realm = config['configurations']['krb5-config']['kdc.realm']
 kdc_domain = config['configurations']['krb5-config']['kdc.domain']
 kdc_admin = config['configurations']['krb5-config']['kdc.admin']
 kdc_adminpassword = config['configurations']['krb5-config']['kdc.adminpassword']
 kdb_password = config['configurations']['krb5-config']['kdb.password']
+
+#kdc_host = config['configurations']['krb5-config']['kdc.host']
+#detect hostname user selected for KDC
+kdc_host = config['clusterHostInfo']['krb5_master_host']
