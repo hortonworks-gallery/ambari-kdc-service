@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+  <property>
+    <name>kdc.piddir</name>
+    <value>/var/run/kdc</value>
+    <description>Process ID Directory</description>
+  </property>
+  
+ <property>
+    <name>content</name>
+    <description>This is the jinja template for krb5.conf file</description>
+    <value>
+
+[logging]
+ default = FILE:/var/log/krb5libs.log
+ kdc = FILE:/var/log/krb5kdc.log
+ admin_server = FILE:/var/log/kadmind.log
+
+[libdefaults]
+ default_realm = {{kdc_realm}}
+ dns_lookup_realm = false
+ dns_lookup_kdc = false
+ ticket_lifetime = 24h
+ renew_lifetime = 7d
+ forwardable = true
+
+[realms]
+ {{kdc_realm}} = {
+  kdc = {{kdc_host}}
+  admin_server = {{kdc_host}}
+ }
+
+[domain_realm]
+ .{{kdc_domain}} = {{kdc_realm}}
+ {{kdc_domain}} = {{kdc_realm}}
+
+    
+    </value>
+  </property>
+  
+        
+</configuration>  
