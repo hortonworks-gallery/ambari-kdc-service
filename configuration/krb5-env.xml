@@ -12,7 +12,6 @@
     <name>content</name>
     <description>This is the jinja template for krb5.conf file</description>
     <value>
-
 [logging]
  default = FILE:/var/log/krb5libs.log
  kdc = FILE:/var/log/krb5kdc.log
@@ -35,8 +34,6 @@
 [domain_realm]
  .{{kdc_domain}} = {{kdc_realm}}
  {{kdc_domain}} = {{kdc_realm}}
-
-    
     </value>
   </property>
   
