@@ -64,6 +64,7 @@ class Master(Script):
     import status_params
     self.configure(env)
     
+    Execute('mkdir '+ status_params.kdc_piddir, ignore_failures=True)    
     Execute('service krb5kdc start')
     Execute('service kadmin start')
     Execute("service krb5kdc status |  sed 's/.*(pid\s*\(.*\)).*/\1/' > " + status_params.kdc_pidfile)
