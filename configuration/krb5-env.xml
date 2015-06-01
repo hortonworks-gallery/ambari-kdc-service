@@ -2,11 +2,6 @@
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 
 <configuration>
-  <property>
-    <name>kdc.piddir</name>
-    <value>/var/run/kdc</value>
-    <description>Process ID Directory</description>
-  </property>
   
  <property>
     <name>content</name>
