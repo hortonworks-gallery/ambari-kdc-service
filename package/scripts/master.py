@@ -9,6 +9,8 @@ class Master(Script):
     self.configure(env)
     import params
 
+    Execute('echo clusterHostInfo contents:' +  str(', '.join(params.clusterHostInfo)))
+    
     #e.g. /var/lib/ambari-agent/cache/stacks/HDP/2.2/services/kdc-stack/package
     service_packagedir = os.path.realpath(__file__).split('/scripts')[0] 
     Execute('/bin/cp -f '+service_packagedir+'/templates/krb5.conf /etc')

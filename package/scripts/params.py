@@ -13,4 +13,5 @@ kdb_password = config['configurations']['krb5-config']['kdb.password']
 
 #kdc_host = config['configurations']['krb5-config']['kdc.host']
 #detect hostname user selected for KDC
-kdc_host = config['clusterHostInfo']['krb5_master_host']
+clusterHostInfo = config['clusterHostInfo']
+kdc_host = str(clusterHostInfo['krb5_master_hosts'][0])
