@@ -59,10 +59,12 @@ curl -u admin:$PASSWORD -i -H 'X-Requested-By: ambari' -X PUT -d '{"RequestInfo"
     ```
     curl -u admin:admin -i -H 'X-Requested-By: ambari' -X DELETE http://sandbox.hortonworks.com:8080/api/v1/clusters/Sandbox/services/KRB5
     ```
-  - Remove artifacts 
+  - Delete the kerberos DB and clear its dirs 
   
     ```
-    /var/lib/ambari-server/resources/stacks/HDP/2.2/services/openldap-stack/remove.sh
+	kdb5_util destroy
+	rm -rf /etc/krb5.conf
+	rm -rf /var/kerberos/krb5kdc/*
     ```
 
 
