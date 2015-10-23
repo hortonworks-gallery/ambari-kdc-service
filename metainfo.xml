@@ -5,7 +5,7 @@
         <service>
             <name>KRB5</name>
             <displayName>Kerberos KDC</displayName>
-            <comment>Kerberos Key Distribution Center is a network service that supplies session tickets and temporary session keys to users and computers within a domain</comment>
+            <comment>FOR DEMO USAGE ONLY!! Kerberos Key Distribution Center is a network service that supplies session tickets and temporary session keys to users and computers within a domain</comment>
             <version>1.0.0</version>
             <components>
                 <component>
